@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Saludo</title>
+    <style>
+        @keyframes cambioColor{
+            0% { color: red; }
+            25% { color: blue; }
+            50% { color: green; }
+            75% { color: orange; }
+            100% { color: purple; }
+        }
+        .cambio-color {
+            animation: cambioColor 5s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${mensaje}" class="cambio-color" style="font-size: 24px; color: blue; text-align: center;"></h1>
+</body>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        setTimeout(() => {
+            const elementoMensaje = document.querySelector('.cambio-color');
+            elementoMensaje.classList.add('cambio-color-animation');
+        }, 100);
+    });
+</script>
+</html>
